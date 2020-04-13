@@ -1,0 +1,98 @@
+.toDoList {
+  margin: 8px;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  h1 {
+    padding: 24px 14px;
+    font-size: 28px;
+    font-weight: 500;
+  }
+  form {
+    position: relative;
+    input {
+      padding: 14px 18px;
+      padding-right: 38px;
+      font-size: 18px;
+      border: 1px Solid #e6e6e6;
+      border-left: none;
+      border-right: none;
+      width: calc(100% - 56px);
+    }
+    button {
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      height: 85%;
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+  }
+  .list {
+    padding: 14px;
+    transition: background-color .3s ease;
+    .listItem {
+      border: 1px Solid #e6e6e6;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      background-color: white;
+      transition: background-color .3s ease-in-out;
+      button {
+        margin-left: 10px;
+        padding: 0px;
+        border: none;
+        background: none;
+        .circle {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          border: solid  #333333 1px;
+          background: white;
+          cursor: pointer;
+        }
+      }
+      .handlecontainer {
+        width: 100%;
+        .handle {
+          border-radius: 4px;
+          font-size: 16px;
+          line-height: 24px;
+          height: 100%;
+          text-align: left;
+          padding: 16px 10px;
+        }
+      }
+      .delete {
+        cursor: pointer;
+        margin-left: 0px;
+        margin-right: 10px;
+        svg {
+          font-size: 20px;
+        }
+      }
+    }
+    .listItem.dragging {
+      background-color: #e6f2ff;
+    }
+    .listItem.done {
+      text-decoration: line-through;
+      .circle {
+        background: #00e600;
+        border: solid #00e600 1px;
+        svg {
+          color: white;
+          vertical-align: middle;
+          font-size: 14px;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .list.dragging {
+    background-color:  #f2f2f2;
+  }
+}

@@ -3,6 +3,8 @@ import { Draggable } from "react-beautiful-dnd";
 import { FaCheck,FaTimes } from "react-icons/fa";
 import styles from "./style.module.scss";
 
+
+
 export default class Task extends React.Component {
   render() {
     return (
@@ -15,7 +17,7 @@ export default class Task extends React.Component {
             {...provided.draggableProps}
             ref={provided.innerRef}
           >
-            <button onClick={() => this.props.complete(this.props.index)}>
+            <button onClick={() => this.props.complete(this.props.index, this.props.columnId)}>
               <div
                 className={styles.circle}
               >
@@ -27,7 +29,7 @@ export default class Task extends React.Component {
                 {this.props.task.content}
               </div>
             </div>
-            <button onClick={() => this.props.delete(this.props.index)} className={styles.delete}>
+            <button onClick={() => this.props.delete(this.props.index, this.props.columnId)} className={styles.delete}>
                 {this.props.done && <FaTimes />}
             </button>
           </div>
